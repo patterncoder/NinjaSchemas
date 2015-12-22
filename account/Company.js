@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 var validate = require('../validators');
+var sharedSchema = require('../sharedSchemas');
 
 var companySchema = new mongoose.Schema({
+    meta: sharedSchema.metaSchema,
     companyName: {
         type: String,
         required: 'Company Name is required.',

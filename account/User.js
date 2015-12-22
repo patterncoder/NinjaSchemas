@@ -1,10 +1,11 @@
 
 var mongoose = require('mongoose');
 
-
+var sharedSchema = require('../sharedSchemas.js');
 
 
 var userSchema = new mongoose.Schema({
+    meta: sharedSchema.metaSchema,
     firstName: {type:String, required:"{PATH} is required!"},
     lastName: {type:String, required:"{PATH} is required!"},
     username: {
