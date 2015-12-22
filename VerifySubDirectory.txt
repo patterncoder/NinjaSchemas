@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-Test to verify subdirectory is working. 3
-=======
-Test to verify subdirectory is working. version 4
->>>>>>> b3ead3afa3a6778ab11f7c857a11c589df17750b
+tets to pull from main repo
