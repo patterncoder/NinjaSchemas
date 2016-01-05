@@ -17,5 +17,3 @@ A location where events can be help
 ##Other Notes
  
   - Should price field be attached to this object? or maybe the contract object?
-
-##Pending changes
