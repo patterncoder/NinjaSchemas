@@ -1,3 +1,11 @@
+#Customer
+Restaurant patron
+
+##Status
+ - Initial review and implementation
+
+
+
 #Object - Customer
 Restaurant patron
 
@@ -44,7 +52,5 @@ Email address
 ##Other Notes
  - none
   
-##Pending changes
 
-  - Initial review
 
