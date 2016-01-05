@@ -2,15 +2,15 @@
 
 Represents an agreement between user and patron for a specific event
 
-*Status*
+**Status**
 
-**contracts**
+*contracts*
   - needs Initial review and implementation
 
-**events**
+*events*
   - needs Initial review and implementation
 
-**commItem**
+*commItem*
   - needs Intial review and implementation
 
 
