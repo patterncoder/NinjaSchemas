@@ -2,6 +2,11 @@
 
 Data fileds inherited by each API object.
 
+*status*
+ - Implemented as of 1/5/16
+
+#Object - MetaData
+
 
 | Fields        | Type    | Description
 | ------------- | ------- | ------------|
