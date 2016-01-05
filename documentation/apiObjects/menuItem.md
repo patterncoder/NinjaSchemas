@@ -1,9 +1,10 @@
-# menuItem
-
-fully implemented 10/3/15
-
+#MenuItem
 Represents any item (usually food or beverage) for sale by a restaurant.
 
+*status*
+ - Needs Initial review and redesign
+ 
+#Object - MenuItem
 
 | Fields        | Type    | Description
 | ------------- | ------- | ------------|
