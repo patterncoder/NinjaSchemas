@@ -2,16 +2,8 @@
 
 Represents an agreement between user and patron for a specific event
 
-**Status**
-
-*contracts*
-  - needs Initial review and implementation
-
-*events*
-  - needs Initial review and implementation
-
-*commItem*
-  - needs Intial review and implementation
+*Status*
+ - Needs initial review and implementation
 
 #Object - Contract
 | Fields        | Type          | Description
