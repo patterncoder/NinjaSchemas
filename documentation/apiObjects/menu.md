@@ -3,7 +3,6 @@ Colleciton of menuItem objects representing a menu.
 
 *Status*
  - needs initial review and implementation
- - 
  
 #Object - Menu
 
