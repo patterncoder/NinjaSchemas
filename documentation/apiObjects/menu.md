@@ -1,7 +1,11 @@
 # Object - menu
-
 Colleciton of menuItem objects representing a menu.
 
+*Status*
+ - needs initial review and implementation
+ - 
+ 
+#Object - Menu
 
 | Fields        | Type          | Description
 | ------------- | -------       | ------------|
@@ -28,8 +32,6 @@ One section of a menu
 
 ##Other Notes
 
--
+- none
 
-###Pending changes
 
-- none 
