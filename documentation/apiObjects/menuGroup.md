@@ -19,7 +19,3 @@ Collection of one or more menu Objects
 ##Other Notes
 
 - Do we need the "State" Field that is currently implemented in the schema? I'm unclear on this fields purpose - Michael
-
-###Pending changes
-
-- abstracting dateCreated to the meta Data Object
