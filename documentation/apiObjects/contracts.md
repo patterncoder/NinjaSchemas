@@ -1,14 +1,15 @@
 #Object - contract
 
 Status
+
 **contracts**
-  - Initial review and implementation
+  - needs Initial review and implementation
 
 **events**
-  - Initial review and implementation
+  - needs Initial review and implementation
 
 **commItem**
-  - Intial review and implementation
+  - needs Intial review and implementation
 
 
 Represents an agreement between user and patron for a specific event
