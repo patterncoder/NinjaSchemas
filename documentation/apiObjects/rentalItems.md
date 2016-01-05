@@ -1,7 +1,10 @@
-#Object - rentalItem
+#Rental Item
 An item that may be rented by a patron.
 
-Fully Implemented - 9/18/15
+*status*
+- Implemented 1/5/16 needs review
+
+#Object - rentalItem
 
 | Fields        | Type          | Description
 | ------------- | -------       | ------------|
