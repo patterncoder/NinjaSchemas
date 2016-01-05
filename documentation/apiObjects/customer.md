@@ -1,7 +1,7 @@
 #Customer
 Restaurant patron
 
-##Status
+#Status
  - Initial review and implementation
 
 
