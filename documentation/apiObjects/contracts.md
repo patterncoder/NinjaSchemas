@@ -1,4 +1,4 @@
-#Object - contract
+#Contract
 
 Represents an agreement between user and patron for a specific event
 
@@ -13,7 +13,7 @@ Represents an agreement between user and patron for a specific event
 *commItem*
   - needs Intial review and implementation
 
-
+#Object - Contract
 | Fields        | Type          | Description
 | ------------- | -------       | ------------|
 | title         | String        | Title of the contract |
