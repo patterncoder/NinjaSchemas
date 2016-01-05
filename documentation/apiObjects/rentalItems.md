@@ -2,7 +2,8 @@
 An item that may be rented by a patron.
 
 *status*
-- Implemented 1/5/16 needs review
+- Implemented 1/5/16 
+- needs review
 
 #Object - rentalItem
 
@@ -28,7 +29,4 @@ conctact information of third party that keeps a rental item
  
   - Should there be a third party rental price in the case that the third party rents the item to the restaurant?
   - Third party contacts are abstracted, is this a good idead?
-  
-##Pending changes
-
 
