@@ -1,5 +1,16 @@
 #Object - contract
 
+Status
+**contracts**
+  - Initial review and implementation
+
+**events**
+  - Initial review and implementation
+
+**commItem**
+  - Intial review and implementation
+
+
 Represents an agreement between user and patron for a specific event
 
 | Fields        | Type          | Description
@@ -51,13 +62,3 @@ A single communication interaction with a customer (e.g. emails, calls, in perso
 **commItem**
 - Old town dining has commType implemented as a enum drop down list. Is this how we should implement it for Banquet Ninja?
 
-##Pending changes
-
-**contracts**
-  - Initial review and implementation
-
-**events**
-  - Initial review and implementation
-
-**commItem**
-  - Intial review and implementation
