@@ -1,6 +1,8 @@
 #Object - contract
 
-Status
+Represents an agreement between user and patron for a specific event
+
+*Status*
 
 **contracts**
   - needs Initial review and implementation
@@ -11,8 +13,6 @@ Status
 **commItem**
   - needs Intial review and implementation
 
-
-Represents an agreement between user and patron for a specific event
 
 | Fields        | Type          | Description
 | ------------- | -------       | ------------|
@@ -51,7 +51,6 @@ A single communication interaction with a customer (e.g. emails, calls, in perso
 ##Other Notes
 
 **contract**
-- I lost the document we collaborated on last thursday, this is the best I could do from memory.
 - Do we need a deposit field on contracts object
 - How should "Sequence of events be implemented"? Do we need a sequence object to do this?
 - Should we have custom fields for customizable contracts to fit each restaurants needs? How would we implement this?
