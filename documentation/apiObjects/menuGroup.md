@@ -1,7 +1,12 @@
 
-#Object - menuGroup
+#MenuGroup
 
 Collection of one or more menu Objects
+
+*status*
+ - needs initial review and implementation
+ 
+#Object - MenuGroup
 
 | Fields        | Type          | Description
 | ------------- | -------       | ------------|
