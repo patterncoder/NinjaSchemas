@@ -1,7 +1,10 @@
-#Object - venue
+#Venue
 A location where events can be help
 
-Fully implemented 9/21/2015
+*status*
+ - needs initial review and implementation
+ 
+#Object - venue
 
 | Fields        | Type          | Description
 | ------------- | -------       | ------------|
