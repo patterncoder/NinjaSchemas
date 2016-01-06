@@ -13,7 +13,7 @@ Represents any item (usually food or beverage) for sale by a restaurant.
 | Title         | String  | Name of the item - menu use |
 | Subtitle      | String  | Description of item -menu use |
 | notes         | String  | additional info about item |
-| categorie     | String  | Type of food/beverage |
+| category     | String  | Type of food/beverage |
 | Linkeditems   | array   | collection of variations on base item (e.g. sauces, preps) |
 
 ##Other Notes
