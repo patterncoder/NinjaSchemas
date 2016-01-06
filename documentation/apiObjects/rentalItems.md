@@ -3,7 +3,7 @@ An item that may be rented by a patron.
 
 *status*
 - Implemented 1/5/16 
-- needs review
+- needs review and testing
 
 #Object - rentalItem
 
