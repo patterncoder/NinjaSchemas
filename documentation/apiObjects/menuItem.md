@@ -2,19 +2,21 @@
 Represents any item (usually food or beverage) for sale by a restaurant.
 
 *status*
- - Needs Initial review and redesign
+ - Needs implementation
  
 #Object - MenuItem
 
 | Fields        | Type    | Description
 | ------------- | ------- | ------------|
-| name          | String  | Name of the item |
-| Description   | String  | Description of the item |
-| Category      | String  | Type of food/beverage |
-
+| name          | String  | Name of the item - office use |
+| Description   | String  | Description of the item - office use |
+| Title         | String  | Name of the item - menu use |
+| Subtitle      | String  | Description of item -menu use |
+| notes         | String  | additional info about item |
+| categorie     | String  | Type of food/beverage |
+| Linkeditems   | array   | collection of variations on base item (e.g. sauces, preps) |
 
 ##Other Notes
-
-- Michael - Unclear on what category would, need examples
-- Do we want to implement "varations" field?
+- This structure will almost definitley need a redesign in the future.
+- How do we solve the chicken shnitzel problem? (multiple similar items). Is the Linkeditems array addressing this issue effectivley?
 
