@@ -11,7 +11,7 @@ Represents an agreement between user and patron for a specific event
 | title         | String        | Title of the contract |
 | description   | String        | Description of the contract |
 | customer      | customer      | Primary customer to associated with contract |
-| event         | event         | Event object describing the contracts event (see below)|
+| eventSteps    | [eventStep]         | Event object describing the contracts event (see below)|
 | rentalItems   | [rentalItem]  | collection of rentalItem Objects needed for the contract event|
 | menuItems     | [menuItem]    | collection of menuItems served at the event |
 | commLog       | [commItem]    | collection of communications about the event |
