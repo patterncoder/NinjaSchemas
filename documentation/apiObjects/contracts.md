@@ -3,7 +3,7 @@
 Represents an agreement between user and patron for a specific event
 
 *Status*
- - Needs initial review and implementation
+ - Created, not rest implemented
 
 #Object - Contract
 | Fields        | Type          | Description
