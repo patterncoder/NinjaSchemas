@@ -2,7 +2,7 @@
 Restaurant patron
 
 *Status*
- - Initial review and implementation
+ - Created, not rest implemented
 
 
 
@@ -15,8 +15,8 @@ Restaurant patron
 | lastName      | Number         | Last name of customer |
 | address       | [address]      | collection of address associated with a customer |
 | emails        | [email]        | collection of emails associated with a customer |
-| contactNumbers| [contactNumber]| collection of phone numbers associated with a customer |
-| contracts     | [contractID]   | ID's of contract objects associated with a customer |
+| phoneNumbers  | [phoneNumber]  | collection of phone numbers associated with a customer |
+| contracts     | []             | ID's of contract objects associated with a customer |
 
 #Object - address
 Address
@@ -36,16 +36,16 @@ Email address
 
 | Fields        | Type           | Description
 | ------------- | -------        | ------------|
-| emailType     | Enum           | type of email |
+| emailType     | String         | type of email |
 | primary       | Boolean        | Is this the primary email |
 | email         | String         | email address |
 
-#Object - contactNumber
-Email address
+#Object - phoneNumber
+phone number of contact
 
 | Fields        | Type           | Description
 | ------------- | -------        | ------------|
-| contactType   | Enum           | type of phone number |
+| contactType   | String         | type of phone number |
 | primary       | Boolean        | Is this the primary contact number |
 | number        | String         | phone number |
 
