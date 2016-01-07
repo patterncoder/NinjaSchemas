@@ -16,7 +16,7 @@ Restaurant patron
 | address       | [address]      | collection of address associated with a customer |
 | emails        | [email]        | collection of emails associated with a customer |
 | phoneNumbers  | [phoneNumber]  | collection of phone numbers associated with a customer |
-| contracts     | []             | ID's of contract objects associated with a customer |
+| contracts     | [String]             | ID's of contract objects associated with a customer |
 
 #Object - address
 Address
