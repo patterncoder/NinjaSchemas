@@ -22,6 +22,7 @@ var menuItemSchema = mongoose.Schema({
     notes: {type:String,
         required: false,
         caption: 'Additional item information'},
+    categories: [String],
     category: {type:String,
         required: false,
         caption: 'Type of item'},
