@@ -5,8 +5,7 @@ var menuItemSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
     name: {type: String,
         required: 'The menu name is required',
-        minlength: [8, 'The menu item name must be at least 8 characters'],
-        match: /^a/, 
+        minlength: [8, 'The menu item name must be at least 8 characters'], 
         caption: "Menu Item Name",
         tabOrder: 10},
     description: {type: String,
@@ -17,12 +16,17 @@ var menuItemSchema = mongoose.Schema({
         required: false,
         caption: 'Menu Item Title',
         tabOrder: 25},
-    subTitle: String,
-    summary: String,
-    category: String,
+    subTitle: {type:String,
+        required: false,
+        caption: 'Menu item subtitle'},
+    notes: {type:String,
+        required: false,
+        caption: 'Additional item information'},
+    category: {type:String,
+        required: false,
+        caption: 'Type of item'},
+    linkedItems: [mongoose.Schema.Types.ObjectId]
    
-    variations: [{name:String,description:String}],
 });
 
 module.exports = menuItemSchema;
-
