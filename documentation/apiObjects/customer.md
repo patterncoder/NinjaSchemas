@@ -50,7 +50,7 @@ phone number of contact
 | number        | String         | phone number |
 
 ##Other Notes
- - none
+ - Not sure how to link contractIDs to the customer object, created an array of contract IDs for now.
   
 
 
