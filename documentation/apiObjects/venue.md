@@ -2,7 +2,7 @@
 A location where events can be help
 
 *status*
- - needs initial review and implementation
+ - Created, not rest implemented
  
 #Object - venue
 
