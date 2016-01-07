@@ -29,7 +29,7 @@ Address
 | address2      | String         | address line 2 |
 | city          | String         | City |
 | State         | String         | State |
-| Zip           | String         | Zip |
+| Zip           | Number         | Zip |
 
 #Object - email
 Email address
