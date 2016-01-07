@@ -11,8 +11,9 @@ Represents an agreement between user and patron for a specific event
 | title         | String        | Title of the contract |
 | description   | String        | Description of the contract |
 | customer      | customer      | Primary customer to associated with contract |
-| eventSteps    | [eventStep]         | Event object describing the contracts event (see below)|
+| eventSteps    | [eventStep]   | Event object describing the contracts event (see below)|
 | rentalItems   | [rentalItem]  | collection of rentalItem Objects needed for the contract event|
+| Venue         | String        | ID of the venue of the event
 | menuItems     | [menuItem]    | collection of menuItems served at the event |
 | commLog       | [commItem]    | collection of communications about the event |
 | status        | enum          | A contract may be in one of serveral statues (init, bid, contract, completed) |
