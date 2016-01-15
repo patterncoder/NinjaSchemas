@@ -1,2 +1,2 @@
-exports.rentalitem = require('./rentalItemSchema');
-exports.venue = require('./venueSchema');
+// exports.rentalitem = require('./rentalItemSchema');
+// exports.venue = require('./venueSchema');
