@@ -1,4 +1,5 @@
-
-exports.accountSchemas = require('./account');
-exports.productionSchemas = require('./production');
-exports.eventsSchemas = require('./events');
+exports.account = require('./account');
+exports.common = require('./common');
+exports.customer = require('./customer');
+exports.events = require('./events');
+exports.production = require('./production');

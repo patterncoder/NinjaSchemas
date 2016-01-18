@@ -1,5 +1,3 @@
-
-
-exports.company = require('./Company');
-exports.user = require('./User');
-exports.signup = require('./Signup');
+exports.Company = require('./CompanySchema');
+exports.User = require('./UserSchema');
+exports.Signup = require('./SignupSchema');
