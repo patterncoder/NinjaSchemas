@@ -23,6 +23,8 @@ var menuItemSchema = mongoose.Schema({
         required: false,
         caption: 'Additional item information'},
     categories: [String],
+    usedOnMenu: [{type: mongoose.Schema.Types.ObjectId,
+        ref: 'Menu'}],
     category: {type:String,
         required: false,
         caption: 'Type of item'},
