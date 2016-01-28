@@ -3,7 +3,11 @@ var sharedSchemas = require('../sharedSchemas');
 
 var venueSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
-    name: String,
+    name: {type: String,
+        required: 'The venue name is required',
+        minlength: [8, 'The venue item name must be at least 8 characters'],
+        caption: 'Venue item description',
+        tabOrder: 20},
     description: String,
     capacity: Number,
     price: Number,

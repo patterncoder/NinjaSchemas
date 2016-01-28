@@ -1,19 +1,18 @@
 var mongoose = require('mongoose');
 var sharedSchemas = require('../sharedSchemas');
 
-var Contact = 
-{
-	name: String,
-	phone: Number,
-	email: String
-}
-
 var rentalItemSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
-    name: String,
+    name: {type: String,
+        required: 'The rental item name is required',
+        minlength: [8, 'The rental item name must be at least 8 characters'], 
+        caption: 'Rental Item Name'},
+    description: {type: String,
+        required: 'The menu description is required',
+        caption: 'Menu item Description',
+        tabOrder: 20},
     price: Number,
-    inHouse: Boolean,
-    contact: Contact
+    inHouse: Boolean
 
 });
 
