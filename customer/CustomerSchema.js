@@ -28,8 +28,14 @@ var phoneNumber =
 
 var customerSchema = mongoose.Schema({
    meta: sharedSchemas.metaSchema,
-   firstName: String,
-   lastName: String,
+   firstName: {type: String,
+        required: 'First Name is required', 
+        caption: "First Name",
+        tabOrder: 10},
+   lastName: {type: String,
+        required: 'Last Name is required',
+        caption: "Last Name",
+        tabOrder: 10},
    address: [Address],
    emails: [Email],
    phoneNumbers: [phoneNumber],
