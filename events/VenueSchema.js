@@ -9,8 +9,10 @@ var venueSchema = mongoose.Schema({
         caption: 'Venue item description',
         tabOrder: 20},
     description: String,
-    capacity: Number,
-    price: Number,
+    capacity: {type: Number,
+    	min: 0},
+    price: {type: Number,
+    	min: 0},
     notes: String
 });
 

@@ -3,24 +3,37 @@ var sharedSchemas = require('../sharedSchemas');
 
 var eventStep =
 {
-	time: Number,
-	duration: Number,
-	description: String
+	time: {type: Number,
+		required: true},
+	duration: {type: Number,
+		min:0},
+	description: {type:String,
+		required: true}
 }
 
 var commItem =
 {
-	date: Date,
-	commType: String,
-	rep: String,
+	date: {type:Date,
+		required: true},
+	commType: {type: String,
+		required: true},
+	rep: {type: String,
+		required: true},
 	description: String
 }
 
 var contractSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
-    title: String,
-	description: String	,
-	customer: {type: mongoose.Schema.Types.ObjectId, ref: 'Customer'},
+    title: {type: String,
+    	required: true},
+	description: String,
+	date: {type: Date,
+		required: true},
+	price: {type: Number,
+		min: 0},
+	customer: {type: mongoose.Schema.Types.ObjectId,
+		ref: 'Customer',
+		required: true},
 	eventSteps: [eventStep],
 	rentalItems: [{type: mongoose.Schema.Types.ObjectId, ref: 'RentalItem'}],
 	venue: {type: mongoose.Schema.Types.ObjectId, ref: 'Venue'},

@@ -11,7 +11,8 @@ var rentalItemSchema = mongoose.Schema({
         required: 'The menu description is required',
         caption: 'Menu item Description',
         tabOrder: 20},
-    price: Number,
+    price: {type:Number,
+    	min: 0},
     inHouse: Boolean
 
 });
