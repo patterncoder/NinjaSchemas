@@ -8,8 +8,8 @@ var Address =
 	address1: String,	
 	address2: String,	
 	city: String,
-	State: String,
-	Zip: Number	
+	state: String,
+	zip: String	
 }
 
 var Email =
@@ -30,10 +30,11 @@ var customerSchema = mongoose.Schema({
    meta: sharedSchemas.metaSchema,
    firstName: String,
    lastName: String,
-   address: [Address],
+   addresses: [Address],
    emails: [Email],
    phoneNumbers: [phoneNumber],
-   contracts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Contract' }]
+   contracts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Contract' }],
+   notes: String
 
 });
 
