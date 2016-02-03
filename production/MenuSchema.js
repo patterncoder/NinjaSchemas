@@ -35,7 +35,8 @@ var menuSchema = new mongoose.Schema({
         subtitle: String,
         summary: String,
         sections: [menuSectionSchema],
-        footer: String
+        footer: String,
+        notes: String
 });
 
 module.exports = menuSchema;

@@ -5,7 +5,7 @@ var menuItemSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
     name: {type: String,
         required: 'The menu name is required',
-        minlength: [8, 'The menu item name must be at least 8 characters'], 
+        //minlength: [8, 'The menu item name must be at least 8 characters'], 
         caption: "Menu Item Name",
         tabOrder: 10},
     description: {type: String,
