@@ -1,30 +1,30 @@
 var mongoose = require('mongoose');
 var sharedSchemas = require('../sharedSchemas');
 
-var Address = 
-{
-	addressType: String,
-	primary: Boolean,	
-	address1: String,	
-	address2: String,	
-	city: String,
-	State: String,
-	Zip: Number	
-}
+// var Address = 
+// {
+// 	addressType: String,
+// 	primary: Boolean,	
+// 	address1: String,	
+// 	address2: String,	
+// 	city: String,
+// 	state: String,
+// 	zip: Number	
+// }
 
-var Email =
-{
-	emailType: String,
-	primary: Boolean,
-	email: String
-}
+// var Email =
+// {
+// 	emailType: String,
+// 	primary: Boolean,
+// 	email: String
+// }
 
-var phoneNumber =
-{
-	contactType: String,
-	primary: Boolean,
-	number: String
-}
+// var phoneNumber =
+// {
+// 	contactType: String,
+// 	primary: Boolean,
+// 	number: String
+// }
 
 var customerSchema = mongoose.Schema({
    meta: sharedSchemas.metaSchema,
@@ -36,9 +36,10 @@ var customerSchema = mongoose.Schema({
         required: 'Last Name is required',
         caption: "Last Name",
         tabOrder: 10},
-   address: [Address],
-   emails: [Email],
-   phoneNumbers: [phoneNumber],
+   //address: [Address],
+   address: [sharedSchemas.address],
+   emails: [sharedSchemas.email],
+   phoneNumbers: [sharedSchemas.phoneNumber],
    contracts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Contract' }]
 
 });
