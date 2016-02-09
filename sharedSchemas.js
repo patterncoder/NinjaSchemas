@@ -18,7 +18,7 @@ exports.address = {
 };
 
 exports.phoneNumber = {
-    contactType: {type:String, enum: ['home', 'work', 'other']},
+    contactType: {type:String, enum: ['home', 'work', 'cell', 'other']},
     primary: {type: Boolean},
     number: {
         type:String,
