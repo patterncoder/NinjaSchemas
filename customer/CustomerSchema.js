@@ -42,9 +42,8 @@ var customerSchema = mongoose.Schema({
    addresses: [sharedSchemas.address],
    emails: [sharedSchemas.email],
    phoneNumbers: [sharedSchemas.phoneNumber],
-   contracts: [{contract:{type: mongoose.Schema.Types.ObjectId, ref: 'Contract'},
-                date: Date,
-                title: String}]
+
+   contracts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Contract'}]
 
 
 });
