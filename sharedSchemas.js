@@ -29,7 +29,19 @@ exports.phoneNumber = {
 };
 
 exports.email = {
-    emailType: {type:String, enum: ['home', 'work', 'other']},
+    emailType: {type:String, enum: ['personal', 'work', 'other']},
+    primary: {type: Boolean},
+    email: {
+        type: String,
+        trim: true,
+        required: 'Email is required',
+        validate: validate.validators.emailValidator
+    }
+    
+};
+
+exports.uniqueEmail = {
+    emailType: {type:String, enum: ['personal', 'work', 'other']},
     primary: {type: Boolean},
     email: {
         type: String,
@@ -39,4 +51,4 @@ exports.email = {
         validate: validate.validators.emailValidator
     }
     
-}
+};

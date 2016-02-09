@@ -39,10 +39,10 @@ var customerSchema = mongoose.Schema({
         caption: "Last Name",
         tabOrder: 10},
    //address: [Address],
-   address: [sharedSchemas.address],
+   addresses: [sharedSchemas.address],
    emails: [sharedSchemas.email],
    phoneNumbers: [sharedSchemas.phoneNumber],
-   contracts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Contract' }]
+   contracts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Contract'}]
 
 
 });
