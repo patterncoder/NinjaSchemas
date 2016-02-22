@@ -48,4 +48,8 @@ var customerSchema = mongoose.Schema({
 
 });
 
+customerSchema.virtual('fullName').get(function(){
+    return this.firstName + ' ' + this.lastName;
+});
+
 module.exports = customerSchema;
