@@ -11,6 +11,14 @@ var eventStep =
 		required: true}
 }
 
+var menuItem = {
+    name: String,
+    description: String,
+    baseId : {type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem'},
+    quantity: Number,
+    price: Number
+}
+
 var commItem =
 {
 	date: {type:Date,
@@ -45,9 +53,9 @@ var contractSchema = mongoose.Schema({
 		min: 0},
 	
 	eventSteps: [eventStep],
-	rentalItems: [{type: mongoose.Schema.Types.ObjectId, ref: 'RentalItem'}],
+	rentalItems: [menuItem],
 	venue: {type: mongoose.Schema.Types.ObjectId, ref: 'Venue'},
-	menuItems: [{type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem'}],
+	menuItems: [],
 	commLog: [commItem],
 	status: [String],
 	notes: String
