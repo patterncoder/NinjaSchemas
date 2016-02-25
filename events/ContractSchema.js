@@ -11,6 +11,14 @@ var eventStep =
 		required: true}
 }
 
+var menuItem = {
+    name: String,
+    description: String,
+    baseId : {type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem'},
+    quantity: Number,
+    price: Number
+}
+
 var commItem =
 {
 	date: {type:Date,
@@ -26,22 +34,28 @@ var contractSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
     customer: {type: mongoose.Schema.Types.ObjectId,
 		ref: 'Customer',
-        required: 'Contracts require a customer.'},
+        required: 'Contracts require a customer.',
+        caption: 'Customer',
+        tabOrder: 10},
     eventName: {type: String,
-    	required: "An event name is required like 'Smith Rehearsal Dinner'"},
+    	required: "An event name is required like 'Smith Rehearsal Dinner'",
+        caption: "Event Name",
+        tabOrder: 20},
 	//description: String,
     natureOfEvent: String,
     initialContactDate: {type: Date},
 	eventDate: {type: Date,
-		required: "Enter an event date."},
+		required: "Enter an event date.",
+        caption: "Event Date",
+        tabOrder: 30},
     startTime: {type: Date},
 	price: {type: Number,
 		min: 0},
 	
 	eventSteps: [eventStep],
-	rentalItems: [{type: mongoose.Schema.Types.ObjectId, ref: 'RentalItem'}],
+	rentalItems: [menuItem],
 	venue: {type: mongoose.Schema.Types.ObjectId, ref: 'Venue'},
-	menuItems: [{type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem'}],
+	menuItems: [],
 	commLog: [commItem],
 	status: [String],
 	notes: String
