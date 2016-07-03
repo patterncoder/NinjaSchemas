@@ -12,6 +12,7 @@ var eventStep =
 }
 
 var menuItem = {
+    sortOrder: Number,
     name: String,
     description: String,
     baseId : {type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem'},
