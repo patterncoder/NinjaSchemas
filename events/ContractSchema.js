@@ -1,14 +1,10 @@
 var mongoose = require('mongoose');
 var sharedSchemas = require('../sharedSchemas');
 
-var eventStep =
-{
-	time: {type: Number,
-		required: true},
-	duration: {type: Number,
-		min:0},
-	description: {type:String,
-		required: true}
+var eventStep = {
+	time: {type: Number, required: true},
+	duration: {type: Number, min:0},
+	description: {type:String, required: true}
 }
 
 var menuItem = {
@@ -20,14 +16,16 @@ var menuItem = {
     price: Number
 }
 
-var commItem =
-{
-	date: {type:Date,
-		required: true},
-	commType: {type: String,
-		required: true},
-	rep: {type: String,
-		required: true},
+var room = {
+	name: String,
+	notes: String,
+	baseId: {type: mongoose.Schema.Types.ObjectId, ref: 'Venue'}
+}
+
+var commItem = {
+	date: {type:Date, required: true},
+	commType: {type: String, required: true},
+	rep: {type: String, required: true},
 	description: String
 }
 
@@ -56,7 +54,7 @@ var contractSchema = mongoose.Schema({
 	eventSteps: [eventStep],
 
 	rentalItems: [],
-	venue: [{type: mongoose.Schema.Types.ObjectId, ref: 'Venue'}],
+	venue: [room],
 	menuItems: [menuItem],
 	commLog: [commItem],
 	status: [String],
