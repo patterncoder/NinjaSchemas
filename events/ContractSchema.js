@@ -55,7 +55,7 @@ var contractSchema = mongoose.Schema({
 	eventSteps: [eventStep],
 
 	rentalItems: [],
-	venue: {type: mongoose.Schema.Types.ObjectId, ref: 'Venue'},
+	venue: [{type: mongoose.Schema.Types.ObjectId, ref: 'Venue'}],
 	menuItems: [menuItem],
 	commLog: [commItem],
 	status: [String],
