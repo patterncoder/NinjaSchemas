@@ -43,8 +43,8 @@ var customerSchema = mongoose.Schema({
    emails: [sharedSchemas.email],
    phoneNumbers: [sharedSchemas.phoneNumber],
 
-   contracts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Contract'}]
-
+   contracts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Contract'}],
+   notes: String
 
 });
 
