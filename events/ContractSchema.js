@@ -25,7 +25,7 @@ var room = {
 var commItem = {
 	date: {type:Date, required: true},
 	commType: {type: String, required: true},
-	rep: {type: String, required: true},
+	employee: {type: String, required: true},
 	description: String
 }
 
