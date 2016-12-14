@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var sharedSchemas = require('../sharedSchemas');
 
 var eventStep = {
-	time: {type: Number, required: true},
+	time: {type: Date, required: true},
 	duration: {type: Number, min:0},
 	description: {type:String, required: true}
 }
