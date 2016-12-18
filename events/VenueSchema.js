@@ -13,6 +13,8 @@ var venueSchema = mongoose.Schema({
     	min: 0},
     price: {type: Number,
     	min: 0},
+    roomFeatures: String,
+    maps: [String],
     notes: String
 });
 
