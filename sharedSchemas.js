@@ -8,7 +8,7 @@ exports.metaSchema =  {
 };
 
 exports.address = {
-	addressType: {type:String, enum: ['home', 'work', 'other']},
+	addressType: {type:String, enum: ['home', 'work', 'other', 'unknown']},
 	primary: {type: Boolean},	
 	address1: {type: String, required: 'At least one address line is required'},	
 	address2: String,	
