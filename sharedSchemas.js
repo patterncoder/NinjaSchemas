@@ -25,7 +25,6 @@ exports.phoneNumber = {
         validate: validate.validators.phoneNumberValidator,
         required: 'Phone number is required'
     }
-    
 };
 
 exports.email = {
