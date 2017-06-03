@@ -29,18 +29,19 @@ var userSchema = new mongoose.Schema({
         tabOrder:30
     },
     company: {
-        company:mongoose.Schema.Types.ObjectId, 
+        company:mongoose.Schema.Types.ObjectId,
         type: 'String',
         required: "Enter a Company.",
         ref:'Company',
         caption: 'Company',
         tabOrder:40
     },
-    //adding security fields here
-    salt: {caption: 'Salt', type:String, required:"{PATH} is required!"},
-    hashed_pwd: {caption: 'hashed', type:String, required:"{PATH} is required!"},
-    roles: [{ caption: 'Roles', type:String, required:"{PATH} is required!", enum: ['superUser', 'admin', 'gold', 'silver', 'bronze']}]
-
+    roles: [{ 
+        caption: 'Roles', 
+        type:String, 
+        required:"User Role is required!", 
+        enum: ['superUser', 'admin', 'gold', 'silver', 'bronze']
+    }]
 });
 
 
