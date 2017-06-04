@@ -20,7 +20,7 @@ var userSchema = new mongoose.Schema({
         caption: "Last Name",
         tabOrder:20
     },
-    userName: {
+    username: {
         username: sharedSchema.uniqueEmail.email,
         type: String,
         caption: 'Username',
@@ -28,20 +28,29 @@ var userSchema = new mongoose.Schema({
         unique: true,
         tabOrder:30
     },
+    password: {
+        type:String, 
+        caption: 'Password',
+        minlength: [8, 'The password must be at least 8 characters'], 
+        required:'Password is required',
+        tabOrder:40
+        },
     company: {
         company:mongoose.Schema.Types.ObjectId,
         type: 'String',
-        required: "Enter a Company.",
+        // required: "Enter a Company.",
         ref:'Company',
         caption: 'Company',
-        tabOrder:40
+        tabOrder:50
     },
-    roles: [{ 
-        caption: 'Roles', 
+    roles: { 
         type:String, 
+        ref: 'User',
         required:"User Role is required!", 
-        enum: ['superUser', 'admin', 'gold', 'silver', 'bronze']
-    }]
+        caption: 'Roles', 
+        enum: ['superUser', 'admin', 'gold', 'silver', 'bronze'],
+        tabOrder:60,
+    }
 });
 
 
