@@ -44,7 +44,7 @@ var userSchema = new mongoose.Schema({
         tabOrder:50
     },
     roles: { 
-        type:String, 
+        type:[String], 
         ref: 'User',
         required:"User Role is required!", 
         caption: 'Roles', 
