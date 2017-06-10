@@ -28,13 +28,6 @@ var userSchema = new mongoose.Schema({
         unique: true,
         tabOrder:30
     },
-    password: {
-        type:String, 
-        caption: 'Password',
-        minlength: [8, 'The password must be at least 8 characters'], 
-        required:'Password is required',
-        tabOrder:40
-        },
     company: {
         company:mongoose.Schema.Types.ObjectId,
         type: 'String',
