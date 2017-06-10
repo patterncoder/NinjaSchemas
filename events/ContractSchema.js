@@ -57,7 +57,7 @@ var contractSchema = mongoose.Schema({
 	venue: [room],
 	menuItems: [menuItem],
 	commLog: [commItem],
-	status: {type:String, enum: ['pending', 'booked', 'complete', 'abandonded']},
+	status: {type:String, enum: ['pending', 'booked', 'complete', 'abandoned']},
 	notes: String
 
 });
