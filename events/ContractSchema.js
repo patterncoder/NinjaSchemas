@@ -58,8 +58,15 @@ var contractSchema = mongoose.Schema({
 	menuItems: [menuItem],
 	commLog: [commItem],
 	status: {type:String, enum: ['pending', 'booked', 'complete', 'abandoned']},
-	notes: String
-
+	notes: String,
+    banquetAttendeeHigh: {
+		type:Number,
+		min: 0
+	},
+    banquetAttendeeLow: {
+		type:Number,
+		min: 1
+	}			
 });
 
 module.exports = contractSchema;
