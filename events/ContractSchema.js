@@ -61,11 +61,11 @@ var contractSchema = mongoose.Schema({
 	notes: String,
     banquetAttendeeHigh: {
 		type:Number,
-		min: 0
+		min: 1
 	},
     banquetAttendeeLow: {
 		type:Number,
-		min: 1
+		min: 0
 	}			
 });
 
