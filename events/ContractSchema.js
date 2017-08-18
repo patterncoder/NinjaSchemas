@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var sharedSchemas = require('../sharedSchemas');
 
 var eventStep = {
-	time: {type: Date},
+	startTime: {type: Date},
+	endTime: {type: Date},
 	duration: {type: Number, min:0},
 	description: {type:String}
 };
@@ -48,7 +49,7 @@ var contractSchema = mongoose.Schema({
 		required: "Enter an event date.",
         caption: "Event Date",
         tabOrder: 30},
-    startTime: {type: Date},
+	time: {type: Date},
 	price: {type: Number,
 		min: 0},
 	
