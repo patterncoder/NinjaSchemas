@@ -22,7 +22,7 @@ exports.phoneNumber = {
     primary: {type: Boolean},
     number: {
         type:String,
-        validate: validate.validators.phoneNumberValidator,
+        // validate: validate.validators.phoneNumberValidator,
         required: 'Phone number is required'
     }
 };
