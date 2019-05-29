@@ -9,6 +9,7 @@ var lookupsSchema = new mongoose.Schema({
 
 
 
+
 });
 
 module.exports = lookupsSchema;

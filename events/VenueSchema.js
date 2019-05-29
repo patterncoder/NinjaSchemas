@@ -1,6 +1,12 @@
 var mongoose = require('mongoose');
 var sharedSchemas = require('../sharedSchemas');
 
+var booking = {
+    dateStart: Date,
+    dateEnd: Date,
+    eventID: {type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem'}
+}
+
 var venueSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
     name: {type: String,
@@ -15,7 +21,13 @@ var venueSchema = mongoose.Schema({
     	min: 0},
     roomFeatures: String,
     maps: [String],
-    notes: String
+    notes: String,
+    bookings: []
 });
+
+
+venueSchema.methods = {
+
+};
 
 module.exports = venueSchema;
