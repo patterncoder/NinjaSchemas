@@ -2,10 +2,10 @@ var mongoose = require('mongoose');
 var sharedSchemas = require('../sharedSchemas');
 
 var eventStep = {
-	time: {type: Date, required: true},
+	time: {type: Date},
 	duration: {type: Number, min:0},
-	description: {type:String, required: true}
-}
+	description: {type:String}
+};
 
 var menuItem = {
     sortOrder: Number,
@@ -14,20 +14,20 @@ var menuItem = {
     baseId : {type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem'},
     quantity: Number,
     price: Number
-}
+};
 
 var room = {
 	name: String,
 	notes: String,
 	baseId: {type: mongoose.Schema.Types.ObjectId, ref: 'Venue'}
-}
+};
 
 var commItem = {
 	date: {type:Date, required: true},
 	commType: {type: String, required: true},
 	employee: {type: String, required: true},
 	description: String
-}
+};
 
 var contractSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
@@ -41,13 +41,14 @@ var contractSchema = mongoose.Schema({
         caption: "Event Name",
         tabOrder: 20},
 	//description: String,
-    natureOfEvent: String,
+	natureOfEvent: String,
+	serviceType: {type:String, enum: ['plated', 'buffet', 'mixer', 'hybrid']},
     initialContactDate: {type: Date},
 	eventDate: {type: Date,
 		required: "Enter an event date.",
         caption: "Event Date",
         tabOrder: 30},
-    startTime: {type: Date},
+	time: {type: Date},
 	price: {type: Number,
 		min: 0},
 	
@@ -57,9 +58,16 @@ var contractSchema = mongoose.Schema({
 	venue: [room],
 	menuItems: [menuItem],
 	commLog: [commItem],
-	status: [String],
-	notes: String
-
+	status: {type:String, enum: ['pending', 'booked', 'complete', 'abandoned']},
+	notes: String,
+    banquetAttendeeHigh: {
+		type:Number,
+		min: 1
+	},
+    banquetAttendeeLow: {
+		type:Number,
+		min: 0
+	}			
 });
 
 module.exports = contractSchema;
