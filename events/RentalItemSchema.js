@@ -19,5 +19,15 @@ var rentalItemSchema = mongoose.Schema({
 });
 
 
+// db.contracts2
+//   .find({ "legacyId": "2" }).forEach((doc) => {
+//     doc.rentalItems.forEach((ri) => {
+//       ri.baseId = ObjectId(`"${ri.baseId}"`);
+//     })
+//     db.contracts2.save(doc);
+//   });
+
+
+
 
 module.exports = rentalItemSchema;
