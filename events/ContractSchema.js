@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var sharedSchemas = require('../sharedSchemas');
+var rentalItemSchema = require('./RentalItemSchema');
 
 var eventStep = {
 	time: {type: Date},
@@ -54,7 +55,7 @@ var contractSchema = mongoose.Schema({
 	
 	eventSteps: [eventStep],
 
-	rentalItems: [],
+	rentalItems: [rentalItemSchema],
 	venue: [room],
 	menuItems: [menuItem],
 	commLog: [commItem],
