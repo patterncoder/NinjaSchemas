@@ -14,7 +14,11 @@ var menuItemSchema = new mongoose.Schema({
 });
 
 var menuSectionSchema = new mongoose.Schema({
-        title: {type: String, required: "{PATH} is required."},
+        title: {
+            type: String, 
+            required: "{PATH} is required.",
+            tabOrder: 10
+        },
         subtitle: String,
         items: [menuItemSchema],
         footer: String,
