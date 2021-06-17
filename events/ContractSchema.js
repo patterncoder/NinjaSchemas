@@ -50,6 +50,7 @@ var contractSchema = mongoose.Schema({
         caption: "Event Date",
         tabOrder: 30},
 	time: {type: Date},
+	endTime: {type: Date},
 	price: {type: Number,
 		min: 0},
 	
