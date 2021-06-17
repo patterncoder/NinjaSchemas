@@ -58,6 +58,7 @@ var contractSchema = mongoose.Schema({
 
 	rentalItems: [rentalItemSchema],
 	venue: [room],
+	venues: [room], //banquetNinja has a bug doesn't use venue but venues.
 	menuItems: [menuItem],
 	commLog: [commItem],
 	status: {type:String, enum: ['pending', 'booked', 'complete', 'abandoned']},
