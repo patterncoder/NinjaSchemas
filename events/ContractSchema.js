@@ -31,7 +31,7 @@ var commItem = {
 };
 
 var deposit = {
-	time: {type: Date},
+	date: {type: Date},
 	amount: {type: Number},
 	completed: {type: Boolean},
 	description: {type: String}
