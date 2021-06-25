@@ -30,6 +30,13 @@ var commItem = {
 	description: String
 };
 
+var deposit = {
+	date: {type: Date},
+	amount: {type: Number},
+	completed: {type: Boolean},
+	description: {type: String}
+};
+
 var contractSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
     customer: {type: mongoose.Schema.Types.ObjectId,
@@ -50,15 +57,18 @@ var contractSchema = mongoose.Schema({
         caption: "Event Date",
         tabOrder: 30},
 	time: {type: Date},
+	endTime: {type: Date},
 	price: {type: Number,
 		min: 0},
 	
 	eventSteps: [eventStep],
 
 	rentalItems: [rentalItemSchema],
-	venues: [room],
+	venue: [room],
+	venues: [room], //banquetNinja has a bug doesn't use venue but venues.
 	menuItems: [menuItem],
 	commLog: [commItem],
+	deposits: [deposit],
 	status: {type:String, enum: ['pending', 'booked', 'complete', 'abandoned']},
 	notes: String,
     banquetAttendeeHigh: {
