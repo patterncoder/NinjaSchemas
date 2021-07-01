@@ -32,6 +32,7 @@ var commItem = {
 
 var deposit = {
 	date: {type: Date},
+	dateAdd: {type: Date},
 	amount: {type: Number},
 	completed: {type: Boolean},
 	description: {type: String}
