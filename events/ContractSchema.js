@@ -31,10 +31,12 @@ var commItem = {
 };
 
 var deposit = {
-	date: {type: Date},
-	dateAdd: {type: Date},
+	dateAdd: {
+		type: Date, 
+		required: "Enter a deposit date."
+	},
+	dateComplete: {type: Date},
 	amount: {type: Number},
-	completed: {type: Boolean},
 	description: {type: String}
 };
 
