@@ -20,7 +20,11 @@ var menuItem = {
 var room = {
 	name: String,
 	notes: String,
-	baseId: {type: mongoose.Schema.Types.ObjectId, ref: 'Venue'}
+	baseId: {type: mongoose.Schema.Types.ObjectId, ref: 'Venue'},
+	price: {
+		type: Number,
+    	min: 0
+	}
 };
 
 var commItem = {
