@@ -15,7 +15,7 @@ var menuItem = {
     baseId : {type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem'},
     quantity: Number,
     price: Number,
-	type: String //is this a menu item, or a divider?
+	itemType: String //is this a menu item, or a divider?
 };
 
 var room = {
