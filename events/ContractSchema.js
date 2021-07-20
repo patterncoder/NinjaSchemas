@@ -56,7 +56,7 @@ var contractSchema = mongoose.Schema({
     	required: "An event name is required like 'Smith Rehearsal Dinner'",
         caption: "Event Name",
         tabOrder: 20},
-	//description: String,
+	description: String,
 	natureOfEvent: String,
 	serviceType: {type:String, enum: ['plated', 'buffet', 'mixer', 'hybrid']},
     initialContactDate: {type: Date},
