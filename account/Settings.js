@@ -24,7 +24,7 @@ var settingsSchema = new mongoose.Schema({
         tabOrder: 30
     },
     brandingLogo: {
-        type: Image,
+        type: String,
         caption: "Branding Logo",
         required: false,
         tabOrder: 40
