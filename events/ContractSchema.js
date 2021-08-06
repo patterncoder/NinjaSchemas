@@ -14,13 +14,18 @@ var menuItem = {
     description: String,
     baseId : {type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem'},
     quantity: Number,
-    price: Number
+    price: Number,
+	itemType: String //is this a menu item, or a divider?
 };
 
 var room = {
 	name: String,
 	notes: String,
-	baseId: {type: mongoose.Schema.Types.ObjectId, ref: 'Venue'}
+	baseId: {type: mongoose.Schema.Types.ObjectId, ref: 'Venue'},
+	price: {
+		type: Number,
+    	min: 0
+	}
 };
 
 var commItem = {
@@ -28,6 +33,16 @@ var commItem = {
 	commType: {type: String, required: true},
 	employee: {type: String, required: true},
 	description: String
+};
+
+var deposit = {
+	dateAdd: {
+		type: Date, 
+		required: "Enter a deposit date."
+	},
+	dateComplete: {type: Date},
+	amount: {type: Number},
+	description: {type: String}
 };
 
 var contractSchema = mongoose.Schema({
@@ -41,7 +56,7 @@ var contractSchema = mongoose.Schema({
     	required: "An event name is required like 'Smith Rehearsal Dinner'",
         caption: "Event Name",
         tabOrder: 20},
-	//description: String,
+	description: String,
 	natureOfEvent: String,
 	serviceType: {type:String, enum: ['plated', 'buffet', 'mixer', 'hybrid']},
     initialContactDate: {type: Date},
@@ -50,15 +65,18 @@ var contractSchema = mongoose.Schema({
         caption: "Event Date",
         tabOrder: 30},
 	time: {type: Date},
+	endTime: {type: Date},
 	price: {type: Number,
 		min: 0},
 	
 	eventSteps: [eventStep],
 
 	rentalItems: [rentalItemSchema],
-	venues: [room],
+	venue: [room],
+	venues: [room], //banquetNinja has a bug doesn't use venue but venues.
 	menuItems: [menuItem],
 	commLog: [commItem],
+	deposits: [deposit],
 	status: {type:String, enum: ['pending', 'booked', 'complete', 'abandoned']},
 	notes: String,
     banquetAttendeeHigh: {

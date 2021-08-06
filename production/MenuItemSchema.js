@@ -28,7 +28,7 @@ var menuItemSchema = mongoose.Schema({
     category: {type:String,
         required: false,
         caption: 'Type of item'},
-    linkedItems: [mongoose.Schema.Types.ObjectId]
+    linkedItems: [mongoose.Schema.Types.ObjectId],
    
 });
 
