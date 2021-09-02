@@ -45,6 +45,11 @@ var deposit = {
 	description: {type: String}
 };
 
+var staffMember = {
+	memberName: {type: String},
+	jobTitle: {type: String}
+};
+
 var contractSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
     customer: {type: mongoose.Schema.Types.ObjectId,
@@ -57,6 +62,7 @@ var contractSchema = mongoose.Schema({
         caption: "Event Name",
         tabOrder: 20},
 	description: String,
+	assignedStaff: [staffMember],
 	natureOfEvent: String,
 	serviceType: {type:String, enum: ['plated', 'buffet', 'mixer', 'hybrid']},
     initialContactDate: {type: Date},
