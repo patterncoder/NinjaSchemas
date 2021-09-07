@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var sharedSchemas = require('../sharedSchemas');
 
-var staffMemberSchema = mongoose.Schema({
+var StaffMemberSchema = mongoose.Schema({
     meta: sharedSchemas.metaSchema,
     memberName: {
         type: String,
@@ -22,4 +22,4 @@ var staffMemberSchema = mongoose.Schema({
     },
 });
 
-module.exports = staffMemberSchema;
+module.exports = StaffMemberSchema;
