@@ -46,8 +46,9 @@ var deposit = {
 };
 
 var staffMember = {
-	memberName: {type: String},
-	jobTitle: {type: String}
+	memberName: {type: String, required: true},
+	jobTitle: {type: String, required: true},
+	price: {type: Number}
 };
 
 var contractSchema = mongoose.Schema({
