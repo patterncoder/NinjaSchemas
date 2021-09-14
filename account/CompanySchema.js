@@ -19,7 +19,7 @@ var companySchema = new mongoose.Schema({
         zip: { type: String, validate: validate.validators.zipCodeValidator }
     }],
     emails: [{
-        emailType: {type: String, enum: ['admin', 'additional']},
+        emailType: {type: String, enum: ['admin', 'accountAdmin', 'additional']},
         primary: Boolean,
         email: { type: String, validate: validate.validators.emailValidator }
     }],
