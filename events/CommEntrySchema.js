@@ -9,6 +9,12 @@ var CommEntrySchema = mongoose.Schema({
         caption: "Date is required to make a comm entry.",
         tabOrder: 10
     },
+    time: {
+        type: Date,
+        required: true,
+        caption: "A time is required.",
+        tabOrder: 15,
+    },
     commType: {
         type: String,
         required: true,
