@@ -15,8 +15,10 @@ var CommEntrySchema = mongoose.Schema({
         caption: "A time is required.",
         tabOrder: 15,
     },
+
     commType: {
         type: String,
+        enum: ["Emailed", "Left Voicemail", "Met With", "Rec. Email", "Rec. Voicemail", "Talked With"],
         required: true,
         caption: "We need to know what kind of comm this is.",
         tabOrder: 20
