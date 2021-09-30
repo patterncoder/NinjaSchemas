@@ -88,9 +88,8 @@ var contractSchema = mongoose.Schema({
 		type: Number,
 		min: 0
 	},
-
+	bidFBMinimum_old: {type: Number},
 	eventSteps: [eventStep],
-
 	rentalItems: [rentalItemSchema],
 	venue: [room],
 	venues: [room], //banquetNinja has a bug doesn't use venue but venues.
