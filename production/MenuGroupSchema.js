@@ -9,7 +9,7 @@ var menuGroupSchema = mongoose.Schema({
         caption: "Menu Group Name",
         tabOrder: 10},
     description: {type: String,
-        required: 'The menu group description is required',
+        // required: 'The menu group description is required',
         caption: "Menu Group Description",
         tabOrder: 20},
     title: String,
