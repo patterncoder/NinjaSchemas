@@ -11,8 +11,9 @@ var CommEntrySchema = mongoose.Schema({
     },
     time: {
         type: Date,
-        required: true,
-        caption: "A time is required.",
+        // disabled for OTD historical data.
+        // required: true,
+        // caption: "A time is required.",
         tabOrder: 15,
     },
 
@@ -25,7 +26,8 @@ var CommEntrySchema = mongoose.Schema({
     },
     employee: {
         type: String,
-        required: true,
+        //disabled for OTD historical data
+        // required: true,
         tabOrder: 30
     },
     description: {

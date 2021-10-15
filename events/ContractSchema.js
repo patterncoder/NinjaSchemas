@@ -30,13 +30,13 @@ var room = {
 
 var commItem = {
 	date: { type: Date, required: true },
-	time: { type: Date, required: true },
+	time: { type: Date },
 	commType: {
 		enum: ["Emailed", "Left Voicemail", "Met With", "Rec. Email", "Rec. Voicemail", "Talked With"],
 		type: String,
 		required: true
 	},
-	employee: { type: String, required: true },
+	employee: { type: String },
 	description: String
 };
 
