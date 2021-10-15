@@ -98,6 +98,7 @@ var contractSchema = mongoose.Schema({
 	deposits: [deposit],
 	status: { type: String, enum: ['pending', 'booked', 'complete', 'abandoned'] },
 	notes: String,
+	addPageBreak: Boolean,
 	banquetAttendeeHigh: {
 		type: Number,
 		min: 1
