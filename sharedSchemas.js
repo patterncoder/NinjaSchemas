@@ -28,7 +28,7 @@ exports.phoneNumber = {
 };
 
 exports.email = {
-    emailType: {type:String, enum: ['personal', 'work', 'other']},
+    emailType: {type:String, enum: ['accountAdmin', 'personal', 'work', 'other']},
     primary: {type: Boolean},
     email: {
         type: String,
@@ -40,7 +40,7 @@ exports.email = {
 };
 
 exports.uniqueEmail = {
-    emailType: {type:String, enum: ['personal', 'work', 'other']},
+    emailType: {type:String, enum: ["accountAdmin", 'personal', 'work', 'other']},
     primary: {type: Boolean},
     email: {
         type: String,

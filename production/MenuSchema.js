@@ -32,7 +32,7 @@ var menuSchema = new mongoose.Schema({
             required: "{PATH} is required.",
             caption: "Menu Name"},
         description: {type: String, 
-            required: "{PATH} is required.",
+            // required: "{PATH} is required.",
             caption: "Description"},
         title: {type: String, 
             required: "{PATH} is required.",
