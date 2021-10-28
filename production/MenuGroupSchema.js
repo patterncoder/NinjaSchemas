@@ -18,6 +18,7 @@ var menuGroupSchema = mongoose.Schema({
     menus: [ {
         menuId: String,
         title: String,
+        name: String,
         subtitle: String
     }  ]
         
