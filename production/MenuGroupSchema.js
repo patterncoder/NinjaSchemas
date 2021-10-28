@@ -16,7 +16,7 @@ var menuGroupSchema = mongoose.Schema({
     subtitle: String,
     summary: String,
     menus: [ {
-        menuId: mongoose.Schema.Types.ObjectId,
+        menuId: String,
         title: String,
         subtitle: String
     }  ]
