@@ -4,6 +4,7 @@ var rentalItemSchema = require('./RentalItemSchema');
 
 var eventStep = {
 	time: { type: Date },
+	endTime: { type: Date },
 	duration: { type: Number, min: 0 },
 	description: { type: String }
 };
