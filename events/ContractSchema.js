@@ -85,6 +85,8 @@ var contractSchema = mongoose.Schema({
 	},
 	time: { type: Date },
 	endTime: { type: Date },
+	startTime24: String,
+	endTime24: String,
 	price: {
 		type: Number,
 		min: 0
