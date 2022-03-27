@@ -10,6 +10,7 @@ var eventStep = {
 
 var menuItem = {
 	sortOrder: Number,
+	printOnHandoutMenu: Boolean,
 	name: String,
 	description: String,
 	baseId: { type: mongoose.Schema.Types.ObjectId, ref: 'MenuItem' },
