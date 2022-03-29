@@ -10,7 +10,8 @@ var menuItemSchema = new mongoose.Schema({
         menuItemId: mongoose.Schema.Types.ObjectId,
         name: {type: String, required: "{PATH} is required."},
         description: String,
-        prices: [menuItemPriceSchema]
+        prices: [menuItemPriceSchema],
+        price: String
 });
 
 var menuSectionSchema = new mongoose.Schema({
