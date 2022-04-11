@@ -144,7 +144,7 @@ contractSchema.methods.getAttendeeRange = function (cb) {
 	let count;
 	if (high === low) {
 		count = `${high} ppl`
-	} else if (low !== 0 && high !== 0 && low < high) {
+	} else if ((low !== 0 && low !== null) && (high !== 0 && high !== null) && low < high) {
 		count = `${low}-${high} ppl`;
 	} else {
 		count = `${high || low} ppl`
