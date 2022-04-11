@@ -110,4 +110,61 @@ var contractSchema = mongoose.Schema({
 	}
 });
 
+contractSchema.methods.getBookedRoomsNames = function (cb) {
+	const venues = this.venues.toObject();
+	return venues.map(v => v.name).join("|");
+}
+
+contractSchema.methods.getAddressParts = function (cb) {
+	let customerInfo = this.customer.toObject();
+	let customerParts = []
+	let name = `${customerInfo.firstName} ${customerInfo.lastName}`;
+	customerParts.push(name);
+	if(customerInfo.addresses.length > 0) {
+		console.log('lets build the address');
+	}
+	if(customerInfo.phoneNumbers.length > 0) {
+		const nums = customerInfo.phoneNumbers.map(pn => {
+			return `${pn.number}${pn.contactType ? ` (${pn.contactType})` : ''}`
+		}).join('|');
+		customerParts.push(nums);
+	}
+	if(customerInfo.emails.length > 0) {
+		const emails = customerInfo.emails.map(em => {
+			return `${em.email}${em.emailType? ` (${em.emailType})` : ''}`
+		}).join('|');
+		customerParts.push(emails);
+	}
+	return customerParts;
+}
+
+contractSchema.methods.getAttendeeRange = function (cb) {
+	const high = this.banquetAttendeeHigh;
+	const low = this.banquetAttendeeLow;
+	let count;
+	if (high === low) {
+		count = `${high} ppl`
+	} else if (low !== 0 && high !== 0 && low < high) {
+		count = `${low}-${high} ppl`;
+	} else {
+		count = `${high || low} ppl`
+	}
+	return count;
+}
+
+contractSchema.methods.getFandBMinimum = function (cb) {
+	let rooms = this.venues;
+	let total = rooms.reduce((accum, room) => {
+		accum += room.price;
+		return accum;
+	}, 0)
+	if (total > 0) {
+		return `$${total.toFixed(2)}`;
+	} else if (this.bidFBMinimum_old > 0) {
+		return `$${this.bidFBMinimum_old.toFixed(2)}`;
+	} else {
+		return `No minimum set`;
+	}
+}
+
 module.exports = contractSchema;
