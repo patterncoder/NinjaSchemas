@@ -19,6 +19,17 @@ var menuItem = {
 	itemType: String //is this a menu item, or a divider?
 };
 
+var addtionalContact = {
+	firstName: String,
+	lastName: String,
+	email: sharedSchemas.email,
+	cellPhone: sharedSchemas.phoneNumber,
+	homePhone: sharedSchemas.phoneNumber,
+	relationToCustomer: String
+};
+
+
+
 var room = {
 	name: String,
 	notes: String,
@@ -97,6 +108,7 @@ var contractSchema = mongoose.Schema({
 	menuItems: [menuItem],
 	commLog: [commItem],
 	deposits: [deposit],
+	additionalContacts: [addtionalContact],
 	status: { type: String, enum: ['pending', 'booked', 'complete', 'abandoned'] },
 	notes: String,
 	addPageBreak: Boolean,
@@ -115,9 +127,11 @@ contractSchema.methods.getBookedRoomsNames = function (cb) {
 	return venues.map(v => v.name).join("|");
 }
 
-contractSchema.methods.getAddressParts = function (cb) {
+contractSchema.methods.getCustomerInfoParts = function (cb) {
 	let customerInfo = this.customer.toObject();
-	let customerParts = []
+	let customerParts = [];
+	let companyName = customerInfo.companyName;
+	if (companyName) customerParts.push(companyName);
 	let name = `${customerInfo.firstName} ${customerInfo.lastName}`;
 	customerParts.push(name);
 	if(customerInfo.addresses.length > 0) {
