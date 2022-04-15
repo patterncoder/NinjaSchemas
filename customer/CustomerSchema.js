@@ -3,7 +3,7 @@ var sharedSchemas = require('../sharedSchemas');
 
 var customerSchema = mongoose.Schema({
    meta: sharedSchemas.metaSchema,
-
+   companyName: String,
    firstName: {type: String,
         required: 'First Name is required', 
         caption: "First Name",
