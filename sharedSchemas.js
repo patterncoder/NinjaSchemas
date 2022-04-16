@@ -27,6 +27,18 @@ exports.phoneNumber = {
     }
 };
 
+exports.phoneNumField = {
+        type:String,
+        trim: true,
+        validate: validate.validators.phoneNumberValidator
+};
+
+exports.emailField = {
+    type: String,
+    trim: true,
+    validate: validate.validators.emailValidator
+};
+
 exports.email = {
     emailType: {type:String, enum: ['accountAdmin', 'personal', 'work', 'other']},
     primary: {type: Boolean},

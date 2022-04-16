@@ -19,16 +19,6 @@ var menuItem = {
 	itemType: String //is this a menu item, or a divider?
 };
 
-var addtionalContact = {
-	firstName: String,
-	lastName: String,
-	email: sharedSchemas.email,
-	cellPhone: sharedSchemas.phoneNumber,
-	homePhone: sharedSchemas.phoneNumber,
-	relationToCustomer: String
-};
-
-
 
 var room = {
 	name: String,
@@ -67,6 +57,16 @@ var staffMember = {
 	jobTitle: { type: String, required: true },
 	price: { type: Number }
 };
+
+
+var additionalContact = mongoose.Schema ({
+	firstName: String,
+	lastName: String,
+	email: sharedSchemas.emailField,
+	cellPhone: sharedSchemas.phoneNumField,
+	homePhone: sharedSchemas.phoneNumField,
+	relationToCustomer: String
+});
 
 var contractSchema = mongoose.Schema({
 	meta: sharedSchemas.metaSchema,
@@ -108,7 +108,9 @@ var contractSchema = mongoose.Schema({
 	menuItems: [menuItem],
 	commLog: [commItem],
 	deposits: [deposit],
-	additionalContacts: [addtionalContact],
+	additionalContacts: {
+		type: [ additionalContact ]
+	},
 	status: { type: String, enum: ['pending', 'booked', 'complete', 'abandoned'] },
 	notes: String,
 	addPageBreak: Boolean,
