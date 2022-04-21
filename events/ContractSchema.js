@@ -116,6 +116,7 @@ var contractSchema = mongoose.Schema({
 	},
 	status: { type: String, enum: ['pending', 'booked', 'complete', 'abandoned'] },
 	notes: String,
+	staffNotes: String,
 	addPageBreak: Boolean,
 	banquetAttendeeHigh: {
 		type: Number,
@@ -155,6 +156,11 @@ contractSchema.methods.getCustomerInfoParts = function (cb) {
 		customerParts.push(emails);
 	}
 	return customerParts;
+}
+
+contractSchema.methods.getAdditionalContacts = function () {
+	let contacts = (Array.from(this.additionalContacts)).map(contact => contact.toObject());
+	return contacts;
 }
 
 contractSchema.methods.getAttendeeRange = function (cb) {
