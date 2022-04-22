@@ -4,6 +4,7 @@ var rentalItemSchema = require('./RentalItemSchema');
 
 var eventStep = {
 	time: { type: Date },
+	endTime: { type: Date },
 	duration: { type: Number, min: 0 },
 	description: { type: String }
 };
@@ -96,6 +97,8 @@ var contractSchema = mongoose.Schema({
 	},
 	time: { type: Date },
 	endTime: { type: Date },
+	startTime24: String,
+	endTime24: String,
 	price: {
 		type: Number,
 		min: 0

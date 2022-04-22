@@ -29,6 +29,7 @@ var menuItemSchema = mongoose.Schema({
         required: false,
         caption: 'Type of item'},
     linkedItems: [mongoose.Schema.Types.ObjectId],
+    price: String
    
 });
 

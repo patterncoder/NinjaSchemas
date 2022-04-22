@@ -3,6 +3,7 @@ var sharedSchema = require('../sharedSchemas');
 
 var menuGroupSchema = mongoose.Schema({
     meta: sharedSchema.metaSchema,
+    active: Boolean,
     name: {type: String,
         required: 'The menu group name is required',
         //minlength: [8, 'The menu item name must be at least 8 characters'], 
@@ -16,8 +17,9 @@ var menuGroupSchema = mongoose.Schema({
     subtitle: String,
     summary: String,
     menus: [ {
-        menuId: mongoose.Schema.Types.ObjectId,
+        menuId: String,
         title: String,
+        name: String,
         subtitle: String
     }  ]
         
