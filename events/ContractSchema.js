@@ -87,7 +87,8 @@ var contractSchema = mongoose.Schema({
 	description: String,
 	assignedStaff: [staffMember],
 	natureOfEvent: String,
-	serviceType: { type: String, enum: ['plated', 'buffet', 'mixer', 'hybrid'] },
+	serviceType: { type: String, enum: ['plated', 'buffet', 'family', 'mixer', 'hybrid'] },
+	beverageServiceType: { type: String, enum: ['hosted', 'hosted limited selection', 'cash and carry', 'private bar'] },
 	initialContactDate: { type: Date },
 	eventDate: {
 		type: Date,
