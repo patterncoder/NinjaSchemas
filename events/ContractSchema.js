@@ -146,7 +146,7 @@ contractSchema.methods.getCustomerInfoParts = function (cb) {
 	if(customerInfo.phoneNumbers.length > 0) {
 		const nums = customerInfo.phoneNumbers.map(pn => {
 			return `${pn.number}${pn.contactType ? ` (${pn.contactType})` : ''}`
-		}).join('|');
+		}).join(' | ');
 		customerParts.push(nums);
 	}
 	if(customerInfo.emails.length > 0) {
