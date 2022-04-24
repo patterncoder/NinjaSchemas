@@ -104,7 +104,8 @@ var contractSchema = mongoose.Schema({
 		type: Number,
 		min: 0
 	},
-	bidFBMinimum_old: {type: Number},
+  bidFBMinimum_old: {type: Number},
+  discount: { type: Number },
 	eventSteps: [eventStep],
 	rentalItems: [rentalItemSchema],
 	venue: [room],
@@ -191,6 +192,36 @@ contractSchema.methods.getFandBMinimum = function (cb) {
 	} else {
 		return `No minimum set`;
 	}
+}
+
+contractSchema.methods.getContractTotals = function () {
+  return contractSchema.statics.getContractTotals(this);
+}
+
+contractSchema.statics.getFoodTotal = function (doc) {
+  const items = doc.menuItems || [];
+  let foodTotal = items.reduce((accum, mi, indx, arr) => {
+    accum += ((mi.price || 0) * (mi.quantity || 0));
+    return accum;
+  }, 0)
+  return foodTotal;
+}
+
+contractSchema.statics.getDepositTotal = function (doc) {
+  const items = doc.deposits || [];
+  let depositTotal = items.reduce((accum, deposit) => {
+    accum += deposit.amount;
+    return accum;
+  }, 0);
+  return depositTotal; 
+}
+
+contractSchema.statics.getContractTotals = function (doc) {
+  const returnVal = {
+    depositTotal: contractSchema.statics.getDepositTotal(doc),
+    foodTotal: contractSchema.statics.getFoodTotal(doc)
+  }
+  return returnVal;
 }
 
 module.exports = contractSchema;
