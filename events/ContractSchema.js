@@ -216,6 +216,15 @@ contractSchema.statics.getFoodTotal = function (doc) {
   return foodTotal;
 }
 
+contractSchema.statics.getRentalTotal = function (doc) {
+  const items = doc.rentalItems || [];
+  let rentalTotal = items.reduce((accum, deposit) => {
+    accum += ((deposit.price || 0) * (deposit.quantity || 0));
+    return accum;
+  }, 0);
+  return rentalTotal; 
+};
+
 contractSchema.statics.getDepositTotal = function (doc) {
   const items = doc.deposits || [];
   let depositTotal = items.reduce((accum, deposit) => {
@@ -228,7 +237,8 @@ contractSchema.statics.getDepositTotal = function (doc) {
 contractSchema.statics.getContractTotals = function (doc) {
   const returnVal = {
     depositTotal: contractSchema.statics.getDepositTotal(doc),
-    foodTotal: contractSchema.statics.getFoodTotal(doc)
+    foodTotal: contractSchema.statics.getFoodTotal(doc),
+    rentalTotal: contractSchema.statics.getRentalTotal(doc)
   }
   return returnVal;
 }
