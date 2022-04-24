@@ -161,7 +161,16 @@ contractSchema.methods.getCustomerInfoParts = function (cb) {
 
 contractSchema.methods.getAdditionalContacts = function () {
 	let contacts = (Array.from(this.additionalContacts)).map(contact => contact.toObject());
-	return contacts;
+	const contactStrings = contacts.map((contact) => {
+		let parts = [];
+		let name = `${contact.firstName} ${contact.lastName}${contact.relationToCustomer ? ` (${contact.relationToCustomer})` : ''}`;
+		parts.push(name);
+		contact.email && parts.push(contact.email);
+		contact.cellPhone && parts.push(`${contact.cellPhone} (cell)`)
+		contact.homePhone && parts.push(`${contact.homePhone} (cell)`)
+		return parts.join(' | ');
+	});
+	return contactStrings;
 }
 
 contractSchema.methods.getAttendeeRange = function (cb) {
