@@ -78,17 +78,19 @@ var contractSchema = mongoose.Schema({
 		caption: 'Customer',
 		tabOrder: 10
 	},
+	additionalContacts: {
+		type: [ additionalContact ]
+	},
 	eventName: {
 		type: String,
 		required: "An event name is required like 'Smith Rehearsal Dinner'",
 		caption: "Event Name",
 		tabOrder: 20
 	},
-	description: String,
-	assignedStaff: [staffMember],
 	natureOfEvent: String,
 	serviceType: { type: String, enum: ['plated', 'buffet', 'family', 'mixer', 'hybrid'] },
 	beverageServiceType: { type: String, enum: ['hosted', 'hosted limited selection', 'cash and carry', 'private bar'] },
+	description: String,
 	initialContactDate: { type: Date },
 	eventDate: {
 		type: Date,
@@ -100,26 +102,6 @@ var contractSchema = mongoose.Schema({
 	endTime: { type: Date },
 	startTime24: String,
 	endTime24: String,
-	price: {
-		type: Number,
-		min: 0
-	},
-  bidFBMinimum_old: {type: Number},
-  discount: { type: Number },
-	eventSteps: [eventStep],
-	rentalItems: [rentalItemSchema],
-	venue: [room],
-	venues: [room], //banquetNinja has a bug doesn't use venue but venues.
-	menuItems: [menuItem],
-	commLog: [commItem],
-	deposits: [deposit],
-	additionalContacts: {
-		type: [ additionalContact ]
-	},
-	status: { type: String, enum: ['pending', 'booked', 'complete', 'abandoned'] },
-	notes: String,
-	staffNotes: String,
-	addPageBreak: Boolean,
 	banquetAttendeeHigh: {
 		type: Number,
 		min: 1
@@ -127,7 +109,31 @@ var contractSchema = mongoose.Schema({
 	banquetAttendeeLow: {
 		type: Number,
 		min: 0
-	}
+	},
+  
+  
+  bidFBMinimum_old: {type: Number},
+  price: {
+		type: Number,
+		min: 0
+  },
+  
+  taxRate: { type: Number },
+  discount: { type: Number },
+
+	commLog: [commItem],
+	// venue: [room],
+	venues: [room], //banquetNinja has a bug doesn't use venue but venues.
+	menuItems: [menuItem],
+	rentalItems: [rentalItemSchema],
+	eventSteps: [eventStep],
+	assignedStaff: [staffMember],
+	deposits: [deposit],
+	status: { type: String, enum: ['pending', 'booked', 'complete', 'abandoned'] },
+	notes: String,
+  staffNotes: String,
+  
+	addPageBreak: Boolean,
 });
 
 contractSchema.methods.getBookedRoomsNames = function (cb) {
@@ -235,12 +241,17 @@ contractSchema.statics.getDepositTotal = function (doc) {
 }
 
 contractSchema.statics.getContractTotals = function (doc) {
-  const returnVal = {
+  const totals = {
     depositTotal: contractSchema.statics.getDepositTotal(doc),
     foodTotal: contractSchema.statics.getFoodTotal(doc),
     rentalTotal: contractSchema.statics.getRentalTotal(doc)
   }
-  return returnVal;
+  totals.taxRate = doc.taxRate || .0875;
+  totals.subTotal = totals.foodTotal + totals.rentalTotal;
+  totals.tax = totals.subTotal * totals.taxRate;
+  totals.total = totals.subTotal + totals.tax;
+  totals.amountDue = totals.total - totals.depositTotal;
+  return totals;
 }
 
 module.exports = contractSchema;
