@@ -247,9 +247,10 @@ contractSchema.statics.getContractTotals = function (doc) {
     rentalTotal: contractSchema.statics.getRentalTotal(doc)
   }
   totals.taxRate = doc.taxRate || .0875;
+  totals.serviceCharge = totals.foodTotal * .2;
   totals.subTotal = totals.foodTotal + totals.rentalTotal;
   totals.tax = totals.subTotal * totals.taxRate;
-  totals.total = totals.subTotal + totals.tax;
+  totals.total = totals.subTotal + totals.serviceCharge + totals.tax;
   totals.amountDue = totals.total - totals.depositTotal;
   return totals;
 }
