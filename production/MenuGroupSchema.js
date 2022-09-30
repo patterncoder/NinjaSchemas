@@ -1,6 +1,10 @@
 var mongoose = require('mongoose');
 var sharedSchema = require('../sharedSchemas');
 
+var menuSchema = new mongoose.Schema({
+
+});
+
 var menuGroupSchema = mongoose.Schema({
     meta: sharedSchema.metaSchema,
     active: Boolean,
@@ -17,12 +21,9 @@ var menuGroupSchema = mongoose.Schema({
     subtitle: String,
     summary: String,
     menus: [ {
-        menuId: String,
-        title: String,
-        name: String,
-        subtitle: String
-    }  ]
-        
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'Menu'
+	} ]
 });
 
 module.exports = menuGroupSchema;
