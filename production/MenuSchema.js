@@ -9,6 +9,7 @@ var menuItemPriceSchema = new mongoose.Schema({
 var menuItemSchema = new mongoose.Schema({
         menuItemId: mongoose.Schema.Types.ObjectId,
         name: {type: String, required: "{PATH} is required."},
+        title: String,
         description: String,
         prices: [menuItemPriceSchema],
         price: String
