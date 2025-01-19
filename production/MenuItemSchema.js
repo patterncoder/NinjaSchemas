@@ -10,6 +10,7 @@ var menuItemSchema = mongoose.Schema({
         tabOrder: 10},
     description: {type: String,
         required: 'The menu description is required',
+        textarea: true,
         caption: "Menu Item Description",
         tabOrder: 20},
     title: {type: String,

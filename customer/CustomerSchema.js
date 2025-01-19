@@ -18,16 +18,9 @@ var customerSchema = mongoose.Schema({
    addresses: [sharedSchemas.address],
    emails: [sharedSchemas.email],
    phoneNumbers: [sharedSchemas.phoneNumber],
-//    associatedWith: [
-//        {
-//            name: String,
-//            notes: String
-//        }
-//    ],
    contracts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Contract'}],
    notes: String,
    validationErrors: [{}]
-
 });
 
 customerSchema.virtual('fullName').get(function(){
