@@ -3,3 +3,4 @@ exports.MenuItem = require('./MenuItemSchema');
 exports.Menu = require('./MenuSchema');
 exports.Ingredient = require('./IngredientSchema');
 exports.Recipe = require('./RecipeSchema');
+exports.Unit = require('./UnitSchema');
