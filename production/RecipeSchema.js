@@ -24,7 +24,7 @@ var recipeSchema = new mongoose.Schema({
         meta: sharedSchema.metaSchema,
         name: {type: String, 
             required: "{PATH} is required.",
-            caption: "Ingredient Name"},
+            caption: "Recipe Name"},
         otdId: Number,
         description: {type: String, 
             caption: "Description"},
