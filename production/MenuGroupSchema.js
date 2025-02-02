@@ -6,7 +6,9 @@ var menuSchema = new mongoose.Schema({
           type: mongoose.Schema.Types.ObjectId,
           ref: 'Menu'
         },
-        referenceName: String,
+        referenceName: { type: String,
+          unique: true
+        },
         notes: String
 });
 
