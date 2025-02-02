@@ -7,7 +7,7 @@ var unitSchema = new mongoose.Schema({
         meta: sharedSchema.metaSchema,
         name: {type: String, 
             required: "{PATH} is required.",
-            caption: "Ingredient Name"},
+            caption: "Unit Name"},
         otdId: Number,
         description: {type: String, 
             caption: "Description"},
