@@ -2,7 +2,12 @@ var mongoose = require('mongoose');
 var sharedSchema = require('../sharedSchemas');
 
 var menuSchema = new mongoose.Schema({
-
+        menuId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Menu'
+        },
+        referenceName: String,
+        notes: String
 });
 
 var menuGroupSchema = mongoose.Schema({
@@ -20,6 +25,8 @@ var menuGroupSchema = mongoose.Schema({
     title: String,
     subtitle: String,
     summary: String,
+    notes: String,
+    groupMenus: [ menuSchema ],
     menus: [ {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'Menu'
