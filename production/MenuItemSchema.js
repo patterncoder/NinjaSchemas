@@ -30,6 +30,13 @@ var menuItemSchema = mongoose.Schema({
         required: false,
         caption: 'Type of item'},
     linkedItems: [mongoose.Schema.Types.ObjectId],
+    sizes: [
+      {
+        size: String,
+        recipeId: {type: mongoose.Schema.Types.ObjectId, ref: 'Recipe'},
+        recipeName: String
+      }
+    ],
     price: String
    
 });

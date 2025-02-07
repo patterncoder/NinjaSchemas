@@ -3,7 +3,10 @@ var sharedSchema = require('../sharedSchemas');
 
 var menuItemPriceSchema = new mongoose.Schema({
     price: {type:Number, default: 0},
-    priceFor: String
+    priceFor: String,
+    recipeId: {type: mongoose.Schema.Types.ObjectId, ref: 'Recipe'},
+    recipeName: String,
+    externalPOSId: String
 });
 
 var menuItemSchema = new mongoose.Schema({
