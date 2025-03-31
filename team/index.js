@@ -1,0 +1,1 @@
+exports.Policy = require('./PolicySchema');
