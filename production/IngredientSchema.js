@@ -45,6 +45,7 @@ var ingredientSchema = new mongoose.Schema({
         //     required: "{PATH} is required.",
         //     caption: "Description"},
         categories: [String],
+        storageLocations: [String],
         shelfLife: Number,
         storageInstructions: String,
         notes: String,
