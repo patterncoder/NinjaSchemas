@@ -22,7 +22,13 @@ var venueSchema = mongoose.Schema({
     roomFeatures: String,
     maps: [String],
     notes: String,
-    bookings: []
+    bookings: [],
+    // Added for restaurant-ninja-api's event-availability feature: distinguishes real
+    // bookable event rooms from back-of-house/utility spaces also stored in this
+    // collection, and lets a stale/duplicate/malformed entry (e.g. old combo-names like
+    // "North/Balcony/Rotunda/South") be excluded going forward without deleting it.
+    isEventSpace: {type: Boolean, default: false},
+    archived: {type: Boolean, default: false}
 });
 
 
