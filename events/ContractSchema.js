@@ -71,6 +71,8 @@ var additionalContact = mongoose.Schema ({
 
 var contractSchema = mongoose.Schema({
 	meta: sharedSchemas.metaSchema,
+	companyId: Number,
+	locationId: Number,
   clonedFrom: { type: mongoose.Schema.Types.ObjectId },
 	customer: {
 		type: mongoose.Schema.Types.ObjectId,
